@@ -1,0 +1,214 @@
+[0;33m--- WARNING: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM8 instead...[0m
+[0;33m--- idf_monitor on \\.\COM8 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40375760: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x42014d2b: call_flush_cb at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1243
+ (inlined by) draw_buf_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1225
+[0m
+[0;33m0x42008f50: disp_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/lv_port.c:101
+[0m
+[0;33m0x400570e8: memset in ROM
+[0m
+[0;33m0x400570f3: memset in ROM
+[0m
+[0;33m0x42014d28: call_flush_cb at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1243
+ (inlined by) draw_buf_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1225
+[0m
+[0;33m0x42015362: refr_area_part at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:716
+[0m
+[0;33m0x420156bb: refr_area at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:572
+ (inlined by) refr_invalid_areas at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:539
+ (inlined by) _lv_disp_refr_timer at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:324
+[0m
+[0;33m0x42024cdf: lv_timer_exec at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/misc/lv_timer.c:313
+ (inlined by) lv_timer_handler at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/misc/lv_timer.c:109
+[0m
+[0;33m0x42008e4f: lv_task_handler at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/lv_api_map.h:37 (discriminator 1)
+ (inlined by) lvgl_task at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/lv_port.c:360 (discriminator 1)
+[0m
+[0;33m0x40385ed1: xthal_save_extra_nw at ??:?
+[0m
+[0;33m0x40375760: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x42014d2b: call_flush_cb at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1243
+ (inlined by) draw_buf_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1225
+[0m
+[0;33m0x42008f50: disp_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/lv_port.c:101
+[0m
+[0;33m0x400570e8: memset in ROM
+[0m
+[0;33m0x400570f3: memset in ROM
+[0m
+[0;33m0x42014d28: call_flush_cb at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1243
+ (inlined by) draw_buf_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1225
+[0m
+[0;33m0x42015362: refr_area_part at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:716
+[0m
+[0;33m0x420156bb: refr_area at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:572
+ (inlined by) refr_invalid_areas at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:539
+ (inlined by) _lv_disp_refr_timer at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:324
+[0m
+[0;33m0x42024cdf: lv_timer_exec at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/misc/lv_timer.c:313
+ (inlined by) lv_timer_handler at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/misc/lv_timer.c:109
+[0m
+[0;33m0x42008e4f: lv_task_handler at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/lv_api_map.h:37 (discriminator 1)
+ (inlined by) lvgl_task at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/lv_port.c:360 (discriminator 1)
+[0m
+[0;33m0x40385ed1: xthal_save_extra_nw at ??:?
+[0m
+[0;33m0x40375760: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x42014d2b: call_flush_cb at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1243
+ (inlined by) draw_buf_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1225
+[0m
+[0;33m0x42008f50: disp_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/lv_port.c:101
+[0m
+[0;33m0x400570e8: memset in ROM
+[0m
+[0;33m0x400570f3: memset in ROM
+[0m
+[0;33m0x42014d28: call_flush_cb at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1243
+ (inlined by) draw_buf_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1225
+[0m
+[0;33m0x42015362: refr_area_part at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:716
+[0m
+[0;33m0x420156bb: refr_area at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:572
+ (inlined by) refr_invalid_areas at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:539
+ (inlined by) _lv_disp_refr_timer at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:324
+[0m
+[0;33m0x42024cdf: lv_timer_exec at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/misc/lv_timer.c:313
+ (inlined by) lv_timer_handler at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/misc/lv_timer.c:109
+[0m
+[0;33m0x42008e4f: lv_task_handler at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/lv_api_map.h:37 (discriminator 1)
+ (inlined by) lvgl_task at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/lv_port.c:360 (discriminator 1)
+[0m
+[0;33m0x40380051: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_hw_support/include/spinlock.h:123
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:501
+[0m
+[0;33m0x40375760: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x42014d2b: call_flush_cb at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1243
+ (inlined by) draw_buf_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1225
+[0m
+[0;33m0x42008f50: disp_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/lv_port.c:101
+[0m
+[0;33m0x400570e8: memset in ROM
+[0m
+[0;33m0x400570f3: memset in ROM
+[0m
+[0;33m0x42014d28: call_flush_cb at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1243
+ (inlined by) draw_buf_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1225
+[0m
+[0;33m0x42015362: refr_area_part at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:716
+[0m
+[0;33m0x420156bb: refr_area at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:572
+ (inlined by) refr_invalid_areas at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:539
+ (inlined by) _lv_disp_refr_timer at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:324
+[0m
+[0;33m0x42024cdf: lv_timer_exec at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/misc/lv_timer.c:313
+ (inlined by) lv_timer_handler at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/misc/lv_timer.c:109
+[0m
+[0;33m0x42008e4f: lv_task_handler at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/lv_api_map.h:37 (discriminator 1)
+ (inlined by) lvgl_task at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/lv_port.c:360 (discriminator 1)
+[0m
+[0;33m0x40385ed1: xthal_save_extra_nw at ??:?
+[0m
+[0;33m0x40375760: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x42014d2b: call_flush_cb at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1243
+ (inlined by) draw_buf_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1225
+[0m
+[0;33m0x42008f50: disp_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/lv_port.c:101
+[0m
+[0;33m0x400570e8: memset in ROM
+[0m
+[0;33m0x400570f3: memset in ROM
+[0m
+[0;33m0x42014d28: call_flush_cb at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1243
+ (inlined by) draw_buf_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1225
+[0m
+[0;33m0x42015362: refr_area_part at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:716
+[0m
+[0;33m0x420156bb: refr_area at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:572
+ (inlined by) refr_invalid_areas at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:539
+ (inlined by) _lv_disp_refr_timer at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:324
+[0m
+[0;33m0x42024cdf: lv_timer_exec at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/misc/lv_timer.c:313
+ (inlined by) lv_timer_handler at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/misc/lv_timer.c:109
+[0m
+[0;33m0x42008e4f: lv_task_handler at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/lv_api_map.h:37 (discriminator 1)
+ (inlined by) lvgl_task at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/lv_port.c:360 (discriminator 1)
+[0m
+[0;33m0x40385ecf: xthal_save_extra_nw at ??:?
+[0m
+[0;33m0x40375760: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33mTo exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl-T Ctrl-X to exit.[0m
+[0;33m0x42014d2b: call_flush_cb at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1243
+ (inlined by) draw_buf_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1225
+[0m
+[0;33m0x42008f50: disp_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/lv_port.c:101
+[0m
+[0;33m0x400570e8: memset in ROM
+[0m
+[0;33m0x400570f3: memset in ROM
+[0m
+[0;33m0x42014d28: call_flush_cb at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1243
+ (inlined by) draw_buf_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1225
+[0m
+[0;33m0x42015362: refr_area_part at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:716
+[0m
+[0;33m0x420156bb: refr_area at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:572
+ (inlined by) refr_invalid_areas at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:539
+ (inlined by) _lv_disp_refr_timer at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:324
+[0m
+[0;33m0x42024cdf: lv_timer_exec at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/misc/lv_timer.c:313
+ (inlined by) lv_timer_handler at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/misc/lv_timer.c:109
+[0m
+[0;33m0x42008e4f: lv_task_handler at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/lv_api_map.h:37 (discriminator 1)
+ (inlined by) lvgl_task at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/lv_port.c:360 (discriminator 1)
+[0m
+[0;33m0x40385ed1: xthal_save_extra_nw at ??:?
+[0m
+[0;33m0x40375760: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x42014d2b: call_flush_cb at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1243
+ (inlined by) draw_buf_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1225
+[0m
+[0;33m0x42008f50: disp_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/lv_port.c:101
+[0m
+[0;33m0x400570e8: memset in ROM
+[0m
+[0;33m0x400570f3: memset in ROM
+[0m
+[0;33m0x42014d28: call_flush_cb at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1243
+ (inlined by) draw_buf_flush at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:1225
+[0m
+[0;33m0x42015362: refr_area_part at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:716
+[0m
+[0;33m0x420156bb: refr_area at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:572
+ (inlined by) refr_invalid_areas at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:539
+ (inlined by) _lv_disp_refr_timer at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/core/lv_refr.c:324
+[0m
+[0;33m0x42024cdf: lv_timer_exec at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/misc/lv_timer.c:313
+ (inlined by) lv_timer_handler at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/misc/lv_timer.c:109
+[0m
+[0;33m0x42008e4f: lv_task_handler at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/lvgl/src/lv_api_map.h:37 (discriminator 1)
+ (inlined by) lvgl_task at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/lv_port.c:360 (discriminator 1)
+[0m
+[0;33m0x40385ecf: xthal_save_extra_nw at ??:?
+[0m
+[0;33m0x40375760: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0m
+Traceback (most recent call last):
+  File "C:\Espressif\frameworks\esp-idf-v5.1.1\tools/idf_monitor.py", line 11, in <module>
+    sys.exit(subprocess.run([sys.executable, '-m', 'esp_idf_monitor'] + sys.argv[1:]).returncode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "subprocess.py", line 550, in run
+  File "subprocess.py", line 1199, in communicate
+  File "subprocess.py", line 1262, in wait
+  File "subprocess.py", line 1543, in _wait
+KeyboardInterrupt

@@ -1,0 +1,161 @@
+[0;33m--- WARNING: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM8 instead...[0m
+[0;33m--- idf_monitor on \\.\COM8 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40375760: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x42038780: lcd_ll_enable_clock at C:/Espressif/frameworks/esp-idf-v5.1.1/components/hal/esp32s3/include/hal/lcd_ll.h:43
+ (inlined by) lcd_rgb_panel_destory at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:176
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556e5: strlen in ROM
+[0m
+[0;33m0x4203877d: lcd_ll_enable_clock at C:/Espressif/frameworks/esp-idf-v5.1.1/components/hal/esp32s3/include/hal/lcd_ll.h:43
+ (inlined by) lcd_rgb_panel_destory at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:176
+[0m
+[0;33m0x42039422: esp_lcd_new_rgb_panel at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:346
+[0m
+[0;33m0x4200a0c9: bsp_lcd_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/peripherals/bsp_lcd.c:241
+[0m
+[0;33m0x42009ada: bsp_board_sensecap_indicator_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/boards/sensecap_indicator_board.c:267
+[0m
+[0;33m0x42009a09: bsp_board_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/boards/bsp_board.c:63
+[0m
+[0;33m0x42008e17: app_main at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/main.c:11
+[0m
+[0;33m0x42053427: main_task at C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x40375c57: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x40375760: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x42038780: lcd_ll_enable_clock at C:/Espressif/frameworks/esp-idf-v5.1.1/components/hal/esp32s3/include/hal/lcd_ll.h:43
+ (inlined by) lcd_rgb_panel_destory at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:176
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556e5: strlen in ROM
+[0m
+[0;33m0x4203877d: lcd_ll_enable_clock at C:/Espressif/frameworks/esp-idf-v5.1.1/components/hal/esp32s3/include/hal/lcd_ll.h:43
+ (inlined by) lcd_rgb_panel_destory at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:176
+[0m
+[0;33m0x42039422: esp_lcd_new_rgb_panel at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:346
+[0m
+[0;33m0x4200a0c9: bsp_lcd_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/peripherals/bsp_lcd.c:241
+[0m
+[0;33m0x42009ada: bsp_board_sensecap_indicator_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/boards/sensecap_indicator_board.c:267
+[0m
+[0;33m0x42009a09: bsp_board_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/boards/bsp_board.c:63
+[0m
+[0;33m0x42008e17: app_main at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/main.c:11
+[0m
+[0;33m0x42053427: main_task at C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x40375c57: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x40375760: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x42038780: lcd_ll_enable_clock at C:/Espressif/frameworks/esp-idf-v5.1.1/components/hal/esp32s3/include/hal/lcd_ll.h:43
+ (inlined by) lcd_rgb_panel_destory at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:176
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556e5: strlen in ROM
+[0m
+[0;33m0x4203877d: lcd_ll_enable_clock at C:/Espressif/frameworks/esp-idf-v5.1.1/components/hal/esp32s3/include/hal/lcd_ll.h:43
+ (inlined by) lcd_rgb_panel_destory at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:176
+[0m
+[0;33m0x42039422: esp_lcd_new_rgb_panel at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:346
+[0m
+[0;33m0x4200a0c9: bsp_lcd_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/peripherals/bsp_lcd.c:241
+[0m
+[0;33m0x42009ada: bsp_board_sensecap_indicator_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/boards/sensecap_indicator_board.c:267
+[0m
+[0;33m0x42009a09: bsp_board_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/boards/bsp_board.c:63
+[0m
+[0;33m0x42008e17: app_main at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/main.c:11
+[0m
+[0;33m0x42053427: main_task at C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x40375c57: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x40375760: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x42038780: lcd_ll_enable_clock at C:/Espressif/frameworks/esp-idf-v5.1.1/components/hal/esp32s3/include/hal/lcd_ll.h:43
+ (inlined by) lcd_rgb_panel_destory at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:176
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556e5: strlen in ROM
+[0m
+[0;33m0x4203877d: lcd_ll_enable_clock at C:/Espressif/frameworks/esp-idf-v5.1.1/components/hal/esp32s3/include/hal/lcd_ll.h:43
+ (inlined by) lcd_rgb_panel_destory at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:176
+[0m
+[0;33m0x42039422: esp_lcd_new_rgb_panel at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:346
+[0m
+[0;33m0x4200a0c9: bsp_lcd_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/peripherals/bsp_lcd.c:241
+[0m
+[0;33m0x42009ada: bsp_board_sensecap_indicator_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/boards/sensecap_indicator_board.c:267
+[0m
+[0;33m0x42009a09: bsp_board_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/boards/bsp_board.c:63
+[0m
+[0;33m0x42008e17: app_main at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/main.c:11
+[0m
+[0;33m0x42053427: main_task at C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x40375c57: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x40375760: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x42038780: lcd_ll_enable_clock at C:/Espressif/frameworks/esp-idf-v5.1.1/components/hal/esp32s3/include/hal/lcd_ll.h:43
+ (inlined by) lcd_rgb_panel_destory at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:176
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556e5: strlen in ROM
+[0m
+[0;33m0x4203877d: lcd_ll_enable_clock at C:/Espressif/frameworks/esp-idf-v5.1.1/components/hal/esp32s3/include/hal/lcd_ll.h:43
+ (inlined by) lcd_rgb_panel_destory at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:176
+[0m
+[0;33m0x42039422: esp_lcd_new_rgb_panel at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:346
+[0m
+[0;33m0x4200a0c9: bsp_lcd_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/peripherals/bsp_lcd.c:241
+[0m
+[0;33m0x42009ada: bsp_board_sensecap_indicator_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/boards/sensecap_indicator_board.c:267
+[0m
+[0;33m0x42009a09: bsp_board_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/boards/bsp_board.c:63
+[0m
+[0;33m0x42008e17: app_main at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/main.c:11
+[0m
+[0;33m0x42053427: main_task at C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x40375c57: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x40375760: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x42038780: lcd_ll_enable_clock at C:/Espressif/frameworks/esp-idf-v5.1.1/components/hal/esp32s3/include/hal/lcd_ll.h:43
+ (inlined by) lcd_rgb_panel_destory at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:176
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556e5: strlen in ROM
+[0m
+[0;33m0x4203877d: lcd_ll_enable_clock at C:/Espressif/frameworks/esp-idf-v5.1.1/components/hal/esp32s3/include/hal/lcd_ll.h:43
+ (inlined by) lcd_rgb_panel_destory at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:176
+[0m
+[0;33m0x42039422: esp_lcd_new_rgb_panel at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_lcd/src/esp_lcd_panel_rgb.c:346
+[0m
+[0;33m0x4200a0c9: bsp_lcd_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/peripherals/bsp_lcd.c:241
+[0m
+[0;33m0x42009ada: bsp_board_sensecap_indicator_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/boards/sensecap_indicator_board.c:267
+[0m
+[0;33m0x42009a09: bsp_board_init at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/src/boards/bsp_board.c:63
+[0m
+[0;33m0x42008e17: app_main at C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/examples/squareline_demo/main/main.c:11
+[0m
+[0;33m0x42053427: main_task at C:/Espressif/frameworks/esp-idf-v5.1.1/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x40375c57: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0m

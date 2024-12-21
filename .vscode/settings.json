@@ -1,0 +1,7 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "idf.espIdfPathWin": "C:/Espressif/frameworks/esp-idf-v5.1.1/",
+    "idf.toolsPathWin": "C:\\Espressif",
+    "idf.flashType": "UART",
+    "idf.portWin": "COM4"
+}
