@@ -10,26 +10,26 @@ void ui_Water_Level_Sensor_and_buttons_screen_init(void)
 ui_Water_Level_Sensor_and_buttons = lv_obj_create(NULL);
 lv_obj_clear_flag( ui_Water_Level_Sensor_and_buttons, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
 
-ui_Water_Tank = lv_obj_create(ui_Water_Level_Sensor_and_buttons);
-lv_obj_remove_style_all(ui_Water_Tank);
-lv_obj_set_width( ui_Water_Tank, 210);
-lv_obj_set_height( ui_Water_Tank, 241);
-lv_obj_set_x( ui_Water_Tank, 119 );
-lv_obj_set_y( ui_Water_Tank, 105 );
-lv_obj_set_align( ui_Water_Tank, LV_ALIGN_CENTER );
-lv_obj_clear_flag( ui_Water_Tank, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE );    /// Flags
-lv_obj_set_style_radius(ui_Water_Tank, 20, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_bg_color(ui_Water_Tank, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_bg_opa(ui_Water_Tank, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_septic_tank = lv_obj_create(ui_Water_Level_Sensor_and_buttons);
+lv_obj_remove_style_all(ui_septic_tank);
+lv_obj_set_width( ui_septic_tank, 210);
+lv_obj_set_height( ui_septic_tank, 241);
+lv_obj_set_x( ui_septic_tank, 119 );
+lv_obj_set_y( ui_septic_tank, 105 );
+lv_obj_set_align( ui_septic_tank, LV_ALIGN_CENTER );
+lv_obj_clear_flag( ui_septic_tank, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+lv_obj_set_style_radius(ui_septic_tank, 20, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_bg_color(ui_septic_tank, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_bg_opa(ui_septic_tank, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-// Configure water tank arc here!
-ui_Arc3 = lv_arc_create(ui_Water_Tank);
+// Configure septic tank arc here!
+ui_Arc3 = lv_arc_create(ui_septic_tank);
 lv_obj_set_width( ui_Arc3, 169);
 lv_obj_set_height( ui_Arc3, 169);
 lv_obj_set_x( ui_Arc3, 6 );
 lv_obj_set_y( ui_Arc3, -21 );
 lv_obj_set_align( ui_Arc3, LV_ALIGN_CENTER );
-lv_arc_set_value(ui_Arc3, 50); // 
+lv_arc_set_value(ui_Arc3, 50);
 lv_obj_set_style_arc_width(ui_Arc3, 20, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_arc_rounded(ui_Arc3, false, LV_PART_MAIN| LV_STATE_DEFAULT);
 
@@ -41,7 +41,7 @@ lv_obj_set_style_arc_rounded(ui_Arc3, false, LV_PART_INDICATOR| LV_STATE_DEFAULT
 lv_obj_set_style_bg_color(ui_Arc3, lv_color_hex(0xFFFFFF), LV_PART_KNOB | LV_STATE_DEFAULT );
 lv_obj_set_style_bg_opa(ui_Arc3, 0, LV_PART_KNOB| LV_STATE_DEFAULT);
 
-ui_Panel2 = lv_obj_create(ui_Water_Tank);
+ui_Panel2 = lv_obj_create(ui_septic_tank);
 lv_obj_set_width( ui_Panel2, 132);
 lv_obj_set_height( ui_Panel2, 129);
 lv_obj_set_x( ui_Panel2, 7 );
@@ -57,7 +57,7 @@ lv_obj_set_style_bg_opa(ui_Panel2, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_bg_color(ui_Panel2, lv_color_hex(0xFFFFFF), LV_PART_SCROLLBAR | LV_STATE_DEFAULT );
 lv_obj_set_style_bg_opa(ui_Panel2, 255, LV_PART_SCROLLBAR| LV_STATE_DEFAULT);
 
-ui_Panel4 = lv_obj_create(ui_Water_Tank);
+ui_Panel4 = lv_obj_create(ui_septic_tank);
 lv_obj_set_width( ui_Panel4, 106);
 lv_obj_set_height( ui_Panel4, 104);
 lv_obj_set_x( ui_Panel4, 7 );
@@ -82,20 +82,20 @@ lv_obj_set_style_text_letter_space(ui_Septic_Level_Value, 5, LV_PART_MAIN| LV_ST
 lv_obj_set_style_text_line_space(ui_Septic_Level_Value, 0, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_Septic_Level_Value, &lv_font_montserrat_28, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_Septic_tank2 = lv_obj_create(ui_Water_Level_Sensor_and_buttons);
-lv_obj_remove_style_all(ui_Septic_tank2);
-lv_obj_set_width( ui_Septic_tank2, 210);
-lv_obj_set_height( ui_Septic_tank2, 241);
-lv_obj_set_x( ui_Septic_tank2, -118 );
-lv_obj_set_y( ui_Septic_tank2, 105 );
-lv_obj_set_align( ui_Septic_tank2, LV_ALIGN_CENTER );
-lv_obj_clear_flag( ui_Septic_tank2, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE );    /// Flags
-lv_obj_set_style_radius(ui_Septic_tank2, 20, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_bg_color(ui_Septic_tank2, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_bg_opa(ui_Septic_tank2, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_water_tank = lv_obj_create(ui_Water_Level_Sensor_and_buttons);
+lv_obj_remove_style_all(ui_water_tank);
+lv_obj_set_width( ui_water_tank, 210);
+lv_obj_set_height( ui_water_tank, 241);
+lv_obj_set_x( ui_water_tank, -118 );
+lv_obj_set_y( ui_water_tank, 105 );
+lv_obj_set_align( ui_water_tank, LV_ALIGN_CENTER );
+lv_obj_clear_flag( ui_water_tank, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+lv_obj_set_style_radius(ui_water_tank, 20, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_bg_color(ui_water_tank, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_bg_opa(ui_water_tank, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 // CONFIGURE WATER TANK LEVEL ARC BELOW!!!
-ui_Arc2 = lv_arc_create(ui_Septic_tank2);
+ui_Arc2 = lv_arc_create(ui_water_tank);
 lv_obj_set_width( ui_Arc2, 169);
 lv_obj_set_height( ui_Arc2, 169);
 lv_obj_set_x( ui_Arc2, 6 );
@@ -113,7 +113,7 @@ lv_obj_set_style_arc_rounded(ui_Arc2, false, LV_PART_INDICATOR| LV_STATE_DEFAULT
 lv_obj_set_style_bg_color(ui_Arc2, lv_color_hex(0xFFFFFF), LV_PART_KNOB | LV_STATE_DEFAULT );
 lv_obj_set_style_bg_opa(ui_Arc2, 0, LV_PART_KNOB| LV_STATE_DEFAULT);
 
-ui_Panel3 = lv_obj_create(ui_Septic_tank2);
+ui_Panel3 = lv_obj_create(ui_water_tank);
 lv_obj_set_width( ui_Panel3, 132);
 lv_obj_set_height( ui_Panel3, 129);
 lv_obj_set_x( ui_Panel3, 7 );
@@ -129,7 +129,7 @@ lv_obj_set_style_bg_opa(ui_Panel3, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_bg_color(ui_Panel3, lv_color_hex(0xFFFFFF), LV_PART_SCROLLBAR | LV_STATE_DEFAULT );
 lv_obj_set_style_bg_opa(ui_Panel3, 255, LV_PART_SCROLLBAR| LV_STATE_DEFAULT);
 
-ui_Panel1 = lv_obj_create(ui_Septic_tank2);
+ui_Panel1 = lv_obj_create(ui_water_tank);
 lv_obj_set_width( ui_Panel1, 106);
 lv_obj_set_height( ui_Panel1, 104);
 lv_obj_set_x( ui_Panel1, 7 );
@@ -280,7 +280,5 @@ lv_obj_set_height( ui_Switch1, 25);
 lv_obj_set_x( ui_Switch1, -3 );
 lv_obj_set_y( ui_Switch1, 13 );
 lv_obj_set_align( ui_Switch1, LV_ALIGN_CENTER );
-
-
 
 }
