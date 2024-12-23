@@ -19,12 +19,12 @@ extern "C" {
 // SCREEN: ui_Water_Level_Sensor_and_buttons
 void ui_Water_Level_Sensor_and_buttons_screen_init(void);
 extern lv_obj_t *ui_Water_Level_Sensor_and_buttons;
-extern lv_obj_t *ui_Water_Tank;
+extern lv_obj_t *ui_septic_tank;
 extern lv_obj_t *ui_Arc3;
 extern lv_obj_t *ui_Panel2;
 extern lv_obj_t *ui_Panel4;
 extern lv_obj_t *ui_Septic_Level_Value;
-extern lv_obj_t *ui_Septic_tank2;
+extern lv_obj_t *ui_water_tank;
 extern lv_obj_t *ui_Arc2;
 extern lv_obj_t *ui_Panel3;
 extern lv_obj_t *ui_Panel1;
