@@ -12,13 +12,13 @@
 // SCREEN: ui_Water_Level_Sensor_and_buttons
 void ui_Water_Level_Sensor_and_buttons_screen_init(void);
 lv_obj_t *ui_Water_Level_Sensor_and_buttons;
-lv_obj_t *ui_Water_Tank;
-lv_obj_t *ui_Arc3; // Water Tank Arc 
+lv_obj_t *ui_septic_tank;
+lv_obj_t *ui_Arc3; // Septic Tank Arc
 lv_obj_t *ui_Panel2;
 lv_obj_t *ui_Panel4;
 lv_obj_t *ui_Septic_Level_Value;
-lv_obj_t *ui_Septic_tank2;
-lv_obj_t *ui_Arc2; // Septic Tank Arc
+lv_obj_t *ui_water_tank;
+lv_obj_t *ui_Arc2; // Water Tank Arc
 lv_obj_t *ui_Panel3;
 lv_obj_t *ui_Panel1;
 lv_obj_t *ui_Water_Level_Value;
