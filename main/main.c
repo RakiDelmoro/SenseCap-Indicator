@@ -132,7 +132,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
             ESP_LOGI(TAG, "MQTT Data received:");
             ESP_LOGI(TAG, "Topic: %.*s", event->topic_len, event->topic);
             ESP_LOGI(TAG, "Data: %.*s", event->data_len, event->data);
-            
+            // TODO: FIx the issue of int to char
             int sensor_read = atoi(event->data);
             lv_arc_set_value(ui_Arc3, sensor_read);
             
