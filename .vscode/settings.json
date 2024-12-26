@@ -5,6 +5,8 @@
     "idf.flashType": "UART",
     "idf.portWin": "COM4",
     "files.associations": {
-        "mode.h": "c"
+        "mode.h": "c",
+        "array": "c",
+        "string": "c"
     }
 }
