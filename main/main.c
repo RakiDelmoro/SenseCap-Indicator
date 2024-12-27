@@ -9,6 +9,7 @@
 #include "esp_event.h"
 #include "esp_netif.h"
 #include "freertos/event_groups.h"
+#include "cJSON.h"
 
 #define WIFI_SSID      "Zoltu"
 #define WIFI_PASSWORD  "1029384756"
@@ -122,6 +123,11 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
         case MQTT_EVENT_DISCONNECTED:
             ESP_LOGI(TAG, "MQTT Disconnected from Home Assistant broker");
             break;
+
+        case MQTT_EVENT_PUBLISHED:
+            ESP_LOGI(TAG, "MQTT Published successfully, msg_id=%d", event->msg_id);
+            break;
+
         case MQTT_EVENT_SUBSCRIBED:
             ESP_LOGI(TAG, "MQTT Successfully subscribed to topic, msg_id=%d", event->msg_id);
             break;
@@ -132,15 +138,24 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
             ESP_LOGI(TAG, "MQTT Data received:");
             ESP_LOGI(TAG, "Topic: %.*s", event->topic_len, event->topic);
             ESP_LOGI(TAG, "Data: %.*s", event->data_len, event->data);
-            // TODO: FIx the issue of int to char
-            int sensor_read = atoi(event->data);
-            lv_arc_set_value(ui_Arc3, sensor_read);
+
+            // Assuming the payload is in JSON format: {"Water_level1": 100, "Water_level2": 94}
+            char mqtt_data[50];
+            strncpy(mqtt_data, event->data, event->data_len);
+            mqtt_data[event->data_len] = '\0'; // Null-terminate the string
             
-            char data[8];
-            snprintf(data, sizeof(data), "%d%%", sensor_read);
-            update_septic_tank(data);
-            memset(data, 0, sizeof(data));
-    
+            cJSON *json_data = cJSON_Parse(mqtt_data);
+            cJSON *water_level2 = cJSON_GetObjectItem(json_data, "water_tank_2");
+            // Normalize to range between 0-100
+            int water_level = (water_level2->valueint - 400) * 100 / (1260 - 400);
+            char water_level_as_str[4];
+            // int water_level = water_level1->valueint;
+            snprintf(water_level_as_str, sizeof(water_level_as_str), "%d", water_level);   
+            lv_arc_set_value(ui_Arc2, water_level);
+            // Append '%' to the sensor_read
+            strcat(water_level_as_str, "%");
+            // Update UI Label
+            lv_label_set_text(ui_Water_Level_Value, water_level_as_str);
             break;
         case MQTT_EVENT_ERROR:
             ESP_LOGI(TAG, "MQTT Error event occurred");
@@ -216,26 +231,46 @@ bool publish_topic(esp_mqtt_client_handle_t client, const char *topic, const cha
     return true;
 }
 
-static void massage_switch_cb(lv_event_t *e) {
+bool bright_switch_state(){
     static bool switch_state = false;
     switch_state = !switch_state;
-    ESP_LOGI("massage switch", "click, current state: %s mode", switch_state ? "on" : "off");
+    return switch_state;
 }
 
 static void bright_switch_cb(lv_event_t *e) {
+    esp_mqtt_client_handle_t mqtt_client = (esp_mqtt_client_handle_t)lv_event_get_user_data(e);
+    bool switch_state = bright_switch_state();
+    ESP_LOGI("bright switch", "click, current state: %s mode", switch_state ? "on" : "off");
+    char data[2];
+    data[0] = switch_state ? '1' : '0';
+    data[1] = '\0';
+    esp_mqtt_client_publish(mqtt_client, "SenseCAP/bright_switch", data, 0, 1, 0);
+}
+
+static void bright_switch(esp_mqtt_client_handle_t mqtt_client) {
+    lv_obj_t *switch_button = ui_Switch1;
+    lv_obj_add_event_cb(switch_button, bright_switch_cb, LV_EVENT_CLICKED, mqtt_client);
+}
+
+bool massage_switch_state(){
     static bool switch_state = false;
     switch_state = !switch_state;
-    ESP_LOGI("bright switch", "click, current state: %s mode", switch_state ? "on" : "off");
+    return switch_state;
 }
 
-static void massage_switch_state(){
+static void massage_switch_cb(lv_event_t *e) {
+    esp_mqtt_client_handle_t mqtt_client = (esp_mqtt_client_handle_t)lv_event_get_user_data(e);
+    bool switch_state = massage_switch_state();
+    ESP_LOGI("massage switch", "click, current state: %s mode", switch_state ? "on" : "off");
+    char data[2];
+    data[0] = switch_state ? '1' : '0';
+    data[1] = '\0';
+    esp_mqtt_client_publish(mqtt_client, "SenseCAP/massage_switch", data, 0, 1, 0);
+}
+
+static void massage_switch(esp_mqtt_client_handle_t mqtt_client){
     lv_obj_t *switch_button = ui_Switch4;
-    lv_obj_add_event_cb(switch_button, massage_switch_cb, LV_EVENT_CLICKED, NULL);
-}
-
-static void bright_switch_state(){
-    lv_obj_t *switch_button = ui_Switch1;
-    lv_obj_add_event_cb(switch_button, bright_switch_cb, LV_EVENT_CLICKED, NULL);
+    lv_obj_add_event_cb(switch_button, massage_switch_cb, LV_EVENT_CLICKED, mqtt_client);
 }
 
 static void update_water_tank(int sensor_read){
@@ -245,8 +280,6 @@ static void update_water_tank(int sensor_read){
     lv_label_set_text(ui_Water_Level_Value, buffer);
 }
 
-
-
 // LVGL tick task
 static void lv_tick_task(void *arg) {
     while (1) {
@@ -255,7 +288,7 @@ static void lv_tick_task(void *arg) {
     }
 }
 
-// FROM Claude:
+
 void app_main(void) {
     const char *mqtt_broker = "mqtt://192.168.50.47";
     const char *client_id = "SenseCAP_D1";
@@ -285,22 +318,22 @@ void app_main(void) {
     int water_level1 = 50;
     int water_level2 = 50;
     update_water_tank(water_level2);
-    bright_switch_state();
-    massage_switch_state();
-    // // Initialize client NULL
+    
+    // Initialize client NULL
     esp_mqtt_client_handle_t client = NULL;
     ESP_LOGI(TAG, "Connected to WiFi");
     // If successfully created client return not NULL
     client = initialize_mqtt(mqtt_broker, client_id, username, password);
 
+    // Switches
+    bright_switch(client);
+    massage_switch(client);
+
     while (1){
-        esp_mqtt_client_subscribe(client, "water_level2", 1);
-        int msg_id = esp_mqtt_client_subscribe(client, "water_level2", 1);
-        if (msg_id == -1) {
-            ESP_LOGE(TAG, "Failed to subscribe to topic");
-        } else {
-            ESP_LOGI(TAG, "Subscribed to topic, msg_id=%d", msg_id);
-        }
-        vTaskDelay(5000);
-    }
+        esp_mqtt_client_subscribe(client, "esp/sensors", 1);
+        esp_mqtt_client_subscribe(client, "SenseCAP/bright_switch", 1);
+
+    vTaskDelay(5000);
+    }        
+
 }
