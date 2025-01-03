@@ -236,7 +236,7 @@ lv_obj_set_height( ui_Massage_Mode_text, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_Massage_Mode_text, 0 );
 lv_obj_set_y( ui_Massage_Mode_text, -30 );
 lv_obj_set_align( ui_Massage_Mode_text, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Massage_Mode_text,"Massage");
+lv_label_set_text(ui_Massage_Mode_text,"Relax");
 lv_obj_set_style_text_color(ui_Massage_Mode_text, lv_color_hex(0xF3FB54), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_text_opa(ui_Massage_Mode_text, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_letter_space(ui_Massage_Mode_text, 4, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -244,8 +244,8 @@ lv_obj_set_style_text_line_space(ui_Massage_Mode_text, 0, LV_PART_MAIN| LV_STATE
 lv_obj_set_style_text_font(ui_Massage_Mode_text, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_Switch4 = lv_switch_create(ui_Panel9);
-lv_obj_set_width( ui_Switch4, 76);
-lv_obj_set_height( ui_Switch4, 25);
+lv_obj_set_width( ui_Switch4, 100);
+lv_obj_set_height( ui_Switch4, 40);
 lv_obj_set_x( ui_Switch4, -3 );
 lv_obj_set_y( ui_Switch4, 13 );
 lv_obj_set_align( ui_Switch4, LV_ALIGN_CENTER );
@@ -275,8 +275,8 @@ lv_obj_set_style_text_line_space(ui_Massage_Mode_text1, 0, LV_PART_MAIN| LV_STAT
 lv_obj_set_style_text_font(ui_Massage_Mode_text1, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_Switch1 = lv_switch_create(ui_Panel5);
-lv_obj_set_width( ui_Switch1, 70);
-lv_obj_set_height( ui_Switch1, 25);
+lv_obj_set_width( ui_Switch1, 100);
+lv_obj_set_height( ui_Switch1, 40);
 lv_obj_set_x( ui_Switch1, -3 );
 lv_obj_set_y( ui_Switch1, 13 );
 lv_obj_set_align( ui_Switch1, LV_ALIGN_CENTER );
