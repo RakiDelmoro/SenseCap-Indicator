@@ -115,10 +115,12 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
 {
     esp_mqtt_event_handle_t event = event_data;
     esp_mqtt_client_handle_t client = event->client;
-
     switch (event->event_id) {
         case MQTT_EVENT_CONNECTED:
-            ESP_LOGI(TAG, "MQTT Connected to Home Assistant broker");
+            ESP_LOGI("Subscribe to topic", "MQTT Connected to Home Assistant broker");
+            esp_mqtt_client_subscribe(client, "SenseCAP/bright_switch/state", 1);
+            esp_mqtt_client_subscribe(client, "SenseCAP/massage_switch/state", 1);
+            
             break;
         case MQTT_EVENT_DISCONNECTED:
             ESP_LOGI(TAG, "MQTT Disconnected from Home Assistant broker");
@@ -138,24 +140,73 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
             ESP_LOGI(TAG, "MQTT Data received:");
             ESP_LOGI(TAG, "Topic: %.*s", event->topic_len, event->topic);
             ESP_LOGI(TAG, "Data: %.*s", event->data_len, event->data);
-
-            // Assuming the payload is in JSON format: {"Water_level1": 100, "Water_level2": 94}
-            char mqtt_data[50];
-            strncpy(mqtt_data, event->data, event->data_len);
-            mqtt_data[event->data_len] = '\0'; // Null-terminate the string
-            
-            cJSON *json_data = cJSON_Parse(mqtt_data);
-            cJSON *water_level2 = cJSON_GetObjectItem(json_data, "water_tank_2");
-            // Normalize to range between 0-100
-            int water_level = (water_level2->valueint - 400) * 100 / (1260 - 400);
-            char water_level_as_str[4];
-            // int water_level = water_level1->valueint;
-            snprintf(water_level_as_str, sizeof(water_level_as_str), "%d", water_level);   
-            lv_arc_set_value(ui_Arc2, water_level);
-            // Append '%' to the sensor_read
-            strcat(water_level_as_str, "%");
-            // Update UI Label
-            lv_label_set_text(ui_Water_Level_Value, water_level_as_str);
+            // Check if this is a command message
+            if (strcmp(event->topic, "SenseCAP/bright_switch/state") == 0) {
+                lv_obj_t *switch_button = ui_Switch1;
+                char command = event->data[0];
+                // Update switch state based on command
+                if (command == '1') {
+                    // Set switch to ON state
+                    // printf("Command: %c\n", command);
+                    lv_obj_add_state(switch_button, LV_STATE_CHECKED);
+                } else if (command == '0') {
+                    // Set switch to OFF state
+                    // printf("Command: %c\n", command);
+                    lv_obj_clear_state(switch_button, LV_STATE_CHECKED);
+                }
+            // Publish back the current state
+            char state[2] = {command, '\0'};
+            esp_mqtt_client_publish(event->client, "SenseCAP/bright_switch", state, 0, 1, 0);
+            } else if (strcmp(event->topic, "SenseCAP/massage_switch/state") == 0) {
+              lv_obj_t *switch_button = ui_Switch4;
+                char command = event->data[0];
+                // Update switch state based on command
+                if (command == '1') {
+                    // Set switch to ON state
+                    // printf("Command: %c\n", command);
+                    lv_obj_add_state(switch_button, LV_STATE_CHECKED);
+                } else if (command == '0') {
+                    // Set switch to OFF state
+                    // printf("Command: %c\n", command);
+                    lv_obj_clear_state(switch_button, LV_STATE_CHECKED);
+                }
+            // Publish back the current state
+            char state[2] = {command, '\0'};
+            esp_mqtt_client_publish(event->client, "SenseCAP/massage_switch", state, 0, 1, 0);
+            } else if (strncmp(event->topic, "esp/septic_tank", event->topic_len) == 0) {
+                // Assuming the payload is in JSON format: {"Water_level1": 100, "Water_level2": 94}
+                char mqtt_data[30];
+                strncpy(mqtt_data, event->data, event->data_len);
+                mqtt_data[event->data_len] = '\0'; // Null-terminate the string
+                // Normalize to range between 0-100
+                int read_water_level = atoi(mqtt_data);
+                int water_level = (read_water_level - 485) * 100 / (1260 - 485);
+                // printf("MQTT Data: %d\n", water_level);
+                char water_level_as_str[4];
+                snprintf(water_level_as_str, sizeof(water_level_as_str), "%d", water_level);   
+                lv_arc_set_value(ui_Arc3, water_level);
+                strcat(water_level_as_str, "%");
+                lv_label_set_text(ui_Septic_Level_Value, water_level_as_str);
+            } else {
+                // Assuming the payload is in JSON format: {"Water_level1": 100, "Water_level2": 94}
+                char mqtt_data[50];
+                strncpy(mqtt_data, event->data, event->data_len);
+                mqtt_data[event->data_len] = '\0'; // Null-terminate the string
+                
+                cJSON *json_data = cJSON_Parse(mqtt_data);
+                cJSON *water_level2 = cJSON_GetObjectItem(json_data, "water_tank_2");
+                // Normalize to range between 0-100
+                int water_level = (water_level2->valueint - 400) * 100 / (1260 - 400);
+                char water_level_as_str[4];
+                // int water_level = water_level1->valueint;
+                snprintf(water_level_as_str, sizeof(water_level_as_str), "%d", water_level);   
+                lv_arc_set_value(ui_Arc2, water_level);
+                // Append '%' to the sensor_read
+                strcat(water_level_as_str, "%");
+                // Update UI Label
+                lv_label_set_text(ui_Water_Level_Value, water_level_as_str);
+                printf("Received data on topic %.*s: %.*s\n", event->topic_len, event->topic, event->data_len, event->data);
+            }
             break;
         case MQTT_EVENT_ERROR:
             ESP_LOGI(TAG, "MQTT Error event occurred");
@@ -244,6 +295,13 @@ static void bright_switch_cb(lv_event_t *e) {
     char data[2];
     data[0] = switch_state ? '1' : '0';
     data[1] = '\0';
+
+    lv_obj_t *switch_button = ui_Switch1;
+    if (switch_state) {
+        lv_obj_add_state(switch_button, LV_STATE_CHECKED);
+    } else {
+        lv_obj_clear_state(switch_button, LV_STATE_CHECKED);
+    }
     esp_mqtt_client_publish(mqtt_client, "SenseCAP/bright_switch", data, 0, 1, 0);
 }
 
@@ -265,6 +323,13 @@ static void massage_switch_cb(lv_event_t *e) {
     char data[2];
     data[0] = switch_state ? '1' : '0';
     data[1] = '\0';
+
+    lv_obj_t *switch_button = ui_Switch4;
+    if (switch_state) {
+        lv_obj_add_state(switch_button, LV_STATE_CHECKED);
+    } else {
+        lv_obj_clear_state(switch_button, LV_STATE_CHECKED);
+    }
     esp_mqtt_client_publish(mqtt_client, "SenseCAP/massage_switch", data, 0, 1, 0);
 }
 
@@ -278,7 +343,7 @@ static void update_water_tank(int sensor_read){
     char buffer[8];
     snprintf(buffer, sizeof(buffer), "%d%%", sensor_read);
     lv_label_set_text(ui_Water_Level_Value, buffer);
-}
+} 
 
 // LVGL tick task
 static void lv_tick_task(void *arg) {
@@ -328,12 +393,11 @@ void app_main(void) {
     // Switches
     bright_switch(client);
     massage_switch(client);
-
+    
     while (1){
         esp_mqtt_client_subscribe(client, "esp/sensors", 1);
-        esp_mqtt_client_subscribe(client, "SenseCAP/bright_switch", 1);
-
-    vTaskDelay(5000);
+        esp_mqtt_client_subscribe(client, "esp/septic_tank", 1);
+        vTaskDelay(5000);
     }        
 
 }
