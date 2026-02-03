@@ -1,7 +1,0 @@
-source "C:/Espressif/frameworks/esp-idf-v5.1.1/components/bootloader/Kconfig.projbuild"
-source "C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_app_format/Kconfig.projbuild"
-source "C:/Espressif/frameworks/esp-idf-v5.1.1/components/esp_rom/Kconfig.projbuild"
-source "C:/Espressif/frameworks/esp-idf-v5.1.1/components/esptool_py/Kconfig.projbuild"
-source "C:/Espressif/frameworks/esp-idf-v5.1.1/components/partition_table/Kconfig.projbuild"
-source "C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/LoRaWAN/Kconfig.projbuild"
-source "C:/Users/Rucky/SenseCapIndicator/SenseCAP_Indicator_ESP32/components/bsp/Kconfig.projbuild"
