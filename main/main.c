@@ -11,8 +11,8 @@
 #include "freertos/event_groups.h"
 #include "cJSON.h"
 
-#define WIFI_SSID      "Zoltu"
-#define WIFI_PASSWORD  "1029384756"
+#define WIFI_SSID      ""
+#define WIFI_PASSWORD  ""
 #define MAXIMUM_RETRY  5
 static int s_retry_num = 0;
 static EventGroupHandle_t s_wifi_event_group;
