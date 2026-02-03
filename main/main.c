@@ -68,8 +68,8 @@ static void wifi_init_task(void *pvParameters) {
 
     wifi_config_t wifi_config = {
         .sta = {
-            .ssid = "Zoltu",
-            .password = "1029384756",
+            .ssid = "",
+            .password = "",
         },
     };
 
