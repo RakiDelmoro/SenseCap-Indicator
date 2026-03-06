@@ -21,5 +21,4 @@ idf_component_register(
         bus
         i2c_devices
         nvs_flash
-        spiffs
-        lora)
+        spiffs)

@@ -3,10 +3,12 @@
     "idf.espIdfPathWin": "C:/Espressif/frameworks/esp-idf-v5.1.1/",
     "idf.toolsPathWin": "C:\\Espressif",
     "idf.flashType": "UART",
-    "idf.portWin": "COM4",
+    "idf.portWin": "COM12",
     "files.associations": {
         "mode.h": "c",
         "array": "c",
         "string": "c"
-    }
+    },
+    "idf.pythonInstallPath": "C:\\Espressif\\tools\\idf-python\\3.11.2\\python.exe",
+    "idf.currentSetup": "C:\\esp\\v5.5.3\\esp-idf"
 }
