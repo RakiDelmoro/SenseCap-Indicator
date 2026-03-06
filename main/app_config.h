@@ -12,7 +12,7 @@ extern "C" {
 #define WIFI_MAX_RETRY      5
 
 /* MQTT Configuration */
-#define MQTT_BROKER_URL     ""
+#define MQTT_BROKER_URL     "mqtt://homeassistant.local"
 #define MQTT_CLIENT_ID      ""
 #define MQTT_USERNAME       ""
 #define MQTT_PASSWORD       ""
