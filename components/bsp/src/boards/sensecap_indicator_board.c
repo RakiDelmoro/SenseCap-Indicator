@@ -20,7 +20,9 @@
 #include "../indev/indev.h"
 #include "../indev/indev_tp.h"
 
+#if CONFIG_LCD_BOARD_SENSECAP_INDICATOR_WXM || CONFIG_LCD_BOARD_SENSECAP_INDICATOR_D1L
 #include "sx126x-board.h"
+#endif
 #include "bmp3xx.h"
 
 static const char *TAG = "board sensecap";
